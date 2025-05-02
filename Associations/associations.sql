@@ -1,10 +1,7 @@
-DROP TABLE IF EXISTS memberships CASCADE;
-DROP TABLE IF EXISTS votes CASCADE;
-DROP TABLE IF EXISTS candidates CASCADE;
-DROP TABLE IF EXISTS association_sessions CASCADE;
-DROP TABLE IF EXISTS associations CASCADE;
-DROP TABLE IF EXISTS students CASCADE;
-DROP TYPE IF EXISTS candidate_status CASCADE;
+DROP SCHEMA public CASCADE;
+CREATE SCHEMA public;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO public;
 
 CREATE TYPE candidate_status AS ENUM ('qualified', 'disqualified', 'withdrawn');
 
