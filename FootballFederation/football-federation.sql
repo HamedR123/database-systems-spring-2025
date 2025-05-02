@@ -113,11 +113,11 @@ CREATE TABLE play_match (
     is_host BOOLEAN NOT NULL,
 
     result match_result NOT NULL,
-    shot_number SMALLINT NOT NULL DEFAULT 0,
-    pass_number SMALLINT NOT NULL DEFAULT 0,
-    foul_number SMALLINT NOT NULL DEFAULT 0,
-    goal_number SMALLINT NOT NULL DEFAULT 0,
-    corner_kick_number SMALLINT NOT NULL DEFAULT 0,
+    shot_number SMALLINT NOT NULL,
+    foul_number SMALLINT NOT NULL,
+    goal_number SMALLINT NOT NULL,
+    pass_number SMALLINT NOT NULL,
+    corner_kick_number SMALLINT NOT NULL,
 
     PRIMARY KEY (match_id, is_host),
     FOREIGN KEY (match_id) REFERENCES match(id) ON DELETE CASCADE,
@@ -127,8 +127,8 @@ CREATE TABLE play_match (
 CREATE TABLE team_season (
     season_id INT NOT NULL,
     team_id INT NOT NULL,
-    score SMALLINT NOT NULL DEFAULT 0,
-    rank SMALLINT NOT NULL DEFAULT 1,
+    score SMALLINT NOT NULL,
+    rank SMALLINT NOT NULL,
 
     PRIMARY KEY (season_id, team_id),
     FOREIGN KEY (season_id) REFERENCES season(id) ON DELETE CASCADE,
