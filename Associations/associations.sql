@@ -44,6 +44,7 @@ CREATE TABLE candidates (
     vote_count INT NOT NULL DEFAULT 0,
     status candidate_status NOT NULL,
 
+    UNIQUE (student_id, association_session_id),
     CHECK (vote_count >= 0),
     FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE,
     FOREIGN KEY (association_session_id) REFERENCES association_sessions(id) ON DELETE CASCADE
